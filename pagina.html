@@ -105,15 +105,13 @@
     </center>
 
     <script>
-
         function Fox() {
-            let image = ""
             fetch("https://randomfox.ca/floof/")
                 .then(response => response.json())
                 .then(data => {
-                    image = data.image
-                    return image
+                    document.getElementById("image").src = data.image;
                 })
+                .catch(error => console.error("Error al obtener la imagen:", error));
         }
     </script>
 
@@ -122,11 +120,15 @@
         Me gustan mucho los animales, pero mi favorito son los zorros.
     </p>
     <center>
+        <p class="txt1">Generar foto de un zorro</p>
         <button class="button" onclick="Fox()">
             <img class="img6" src="/Media/boton.webp" />
         </button>
-        <img src=/>
     </center>
+    <center>
+        <img class="zorro" id="image" />
+    </center>
+
 
     <!-- ----------------- -->
 
@@ -190,6 +192,15 @@
             font-style: italic;
             font-weight: bolder;
             color: white;
+        }
+
+        .txt1 {
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px 2px black;
+            font-size: x-large;
+            font-style: italic;
+            font-weight: bolder;
+            color: rgb(116, 114, 114);
         }
 
         .AIC {

@@ -104,11 +104,32 @@
         </a>
     </center>
 
+    <script>
+
+        function Fox() {
+            let image = ""
+            fetch("https://randomfox.ca/floof/")
+                .then(response => response.json())
+                .then(data => {
+                    image = data.image
+                    return image
+                })
+        }
+    </script>
+
+    <h3 class="title">Animales</h3>
+    <p class="txt">
+        Me gustan mucho los animales, pero mi favorito son los zorros.
+    </p>
     <center>
-        <p class="txt" style="padding-top: 80px;">Boton bien normal</p>
-        <img src="/Media/boton.webp" alt="Boton" style="height: 200px;">
+        <button class="button" onclick="Fox()">
+            <img class="img6" src="/Media/boton.webp" />
+        </button>
+        <img src=/>
     </center>
+
     <!-- ----------------- -->
+
     <style>
         .TV {
             height: 500px;
@@ -149,6 +170,15 @@
             height: 300px
         }
 
+        .img6 {
+            height: 100px;
+        }
+
+        .button {
+            background-color: transparent;
+            height: 100px;
+        }
+
         video {
             height: 500px;
         }
@@ -187,6 +217,9 @@
             background-image: url("/Media/wallpaperflare.com_wallpaper.jpg");
         }
     </style>
+
+    <!-- ----------------- -->
+
 
 </body>
 
